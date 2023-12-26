@@ -3,10 +3,6 @@ import styled from 'styled-components'
 import {Modal} from './components/Modal'
 
 
-const Input = styled.input`
-  font-size: 20px;
-`
-
 const Button = styled.button`
   padding: 5px;
   background: #ffffff;

@@ -20,11 +20,12 @@ export const Header = ({onSearch}) => {
     const {addNewNotion} = useAddNewNotion()
 
     const handleCreate = (title) => {
-        addNewNotion({
+        addNewNotion(
+            {
             id: Date.now(),
             title: title,
             completed: false
-        })
+            })
     }
 
     const handleSearch = (value) => {
