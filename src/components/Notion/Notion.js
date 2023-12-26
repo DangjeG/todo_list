@@ -10,6 +10,7 @@ const Title = styled.a`
 `
 
 const Container = styled.div`
+  background: white;
   display: flex;
   padding: 1%;
   flex-direction: row;
@@ -69,7 +70,7 @@ export const Notion = ({notion}) => {
                 <Title>{notion.title}</Title>
             </DataContainer>
             <ButtonContainer>
-                <ConfirmAlert onAccept={handleDelete} warn={"Вы точно хотите удалить запись?"}>Delete</ConfirmAlert>
+                <ConfirmAlert onAccept={handleDelete} warn={"Are you sure you want to delete the notion?"}>Delete</ConfirmAlert>
                 <FormAlert onAccept={handleAccept} initialState={notion}>Edit</FormAlert>
             </ButtonContainer>
         </Container>

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import {Modal} from './components/Modal'
 
 
-const Input = styled.input`
+const Input = styled.textarea`
   border-radius: 10px;
   font-size: 20px;
 `
@@ -45,14 +45,14 @@ export const FormAlert = ({onAccept, initialState, children}) => {
     useEffect(() => {
         if (!initialState) return
         setTitle(initialState.title)
-    }, []);
+    }, [], );
 
     const renderModal = () => {
         if (isModalVisible)
             return (
                 <Modal onClose={handleCloseAlert} onAccept={handleAccept}>
-                    <div>Введите название</div>
-                    <Input value={title} onChange={handleChange}/>
+                    <div>Enter notion</div>
+                    <Input rows={3} cols={30} value={title} onChange={handleChange}/>
                 </Modal>
             )
         else return null
