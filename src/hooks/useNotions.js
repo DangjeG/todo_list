@@ -17,8 +17,8 @@ export const useAddNewNotion = () => {
     const {mutate} = useMutation({
         mutationFn: (notion) => {
             if (notions) {
-                const newPhonesArray = notions.concat([notion])
-                return NotionActions.saveValue(newPhonesArray);
+                const newNotionsArray = notions.concat([notion])
+                return NotionActions.saveValue(newNotionsArray);
             }
         },
         onSuccess: () => {
@@ -36,8 +36,8 @@ export const useDeleteNotion = () => {
     const {mutate} = useMutation({
         mutationFn: (id) => {
             if (notions) {
-                const newPhonesArray = notions.filter(item => !(item.id === id))
-                return NotionActions.saveValue(newPhonesArray);
+                const newNotionsArray = notions.filter(item => !(item.id === id))
+                return NotionActions.saveValue(newNotionsArray);
             }
         },
         onSuccess: () => {
@@ -57,11 +57,11 @@ export const useUpdateNotion = () => {
     const {mutate} = useMutation({
         mutationFn: (notion) => {
             if (notions) {
-                const newPhonesArray = notions.map((item, index) => {
+                const newNotionsArray = notions.map((item, index) => {
                     if(item.id === notion.id) return notion
                     else return item
                 });
-                return NotionActions.saveValue(newPhonesArray);
+                return NotionActions.saveValue(newNotionsArray);
             }
         },
         onSuccess: () => {
